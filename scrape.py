@@ -37,6 +37,7 @@ while True:
 
 colors = driver.find_elements(By.XPATH, '//*[@id="colors_results"]/div')
 
+scraped_colors_array = {"colors": []}
 scraped_colors = {}
 for color in colors:
     hex_code_element = color.find_element(By.XPATH, ".//*//span")
@@ -49,12 +50,24 @@ for color in colors:
     color_name = color.text.upper()
     print(f"hex: {hex_code}, name: {color_name}")
 
+    scraped_colors_array["colors"].append({"hex": hex_code, "name": color_name})
     scraped_colors[hex_code] = color_name
 
-print(scraped_colors)
+json_scraped_colors_array = json.dumps(scraped_colors, indent=4, ensure_ascii=False)
+with open("data/colors.json", "w", encoding="utf-8") as file:
+    file.write(json_scraped_colors_array)
 
-json_scraped_colors = json.dumps(scraped_colors, indent=4, ensure_ascii=False)
-with open("colors.json", "w", encoding="utf-8") as file:
+json_min_scraped_colors_array = json.dumps(scraped_colors, ensure_ascii=False)
+with open("data/colors.min.json", "w", encoding="utf-8") as file:
+    file.write(json_min_scraped_colors_array)
+
+json_scraped_colors = json.dumps(scraped_colors_array, indent=4, ensure_ascii=False)
+with open("data/colors_array.json", "w", encoding="utf-8") as file:
     file.write(json_scraped_colors)
+
+json_min_scraped_colors = json.dumps(scraped_colors_array, ensure_ascii=False)
+with open("data/colors_array.min.json", "w", encoding="utf-8") as file:
+    file.write(json_min_scraped_colors)
+
 
 # 540 colors
