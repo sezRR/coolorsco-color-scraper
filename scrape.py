@@ -1,3 +1,4 @@
+import json
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -46,9 +47,14 @@ for color in colors:
         continue
 
     color_name = color.text.upper()
-    print(f"HEX: {hex_code}, NAME: {color_name}")
+    print(f"hex: {hex_code}, name: {color_name}")
 
     scraped_colors[hex_code] = color_name
 
 print(scraped_colors)
+
+json_scraped_colors = json.dumps(scraped_colors, indent=4, ensure_ascii=False)
+with open("colors.json", "w", encoding="utf-8") as file:
+    file.write(json_scraped_colors)
+
 # 540 colors
