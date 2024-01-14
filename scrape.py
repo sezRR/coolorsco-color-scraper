@@ -13,12 +13,12 @@ driver.get("http://coolors.co/colors")
 
 delay = 1.5
 try:
-    WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, '//*[@id="iubenda-cs-banner"]/div/div/div/div[3]/div[2]/button[2]')))
+    WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, '//*[@id="iubenda-cs-banner"]/div/div/div/div[3]/div[2]/button')))
     print("The page is ready!")
 except TimeoutException:
     print("The page did not load on time.")
 
-driver.find_element(By.XPATH, '//*[@id="iubenda-cs-banner"]/div/div/div/div[3]/div[2]/button[2]').click()
+driver.find_element(By.XPATH, '//*[@id="iubenda-cs-banner"]/div/div/div/div[3]/div[2]/button').click()
 driver.find_element(By.XPATH, '//*[@id="modal-fabrizio"]/div/div[2]/div/a').click()
 
 last_height = driver.execute_script("return document.body.scrollHeight")

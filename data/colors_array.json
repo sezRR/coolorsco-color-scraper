@@ -2111,54 +2111,6 @@
         {
             "hex": "000000",
             "name": "BLACK"
-        },
-        {
-            "hex": "4B3621",
-            "name": "CAFÉ NOIR"
-        },
-        {
-            "hex": "36454F",
-            "name": "CHARCOAL"
-        },
-        {
-            "hex": "555D50",
-            "name": "EBONY"
-        },
-        {
-            "hex": "1B1B1B",
-            "name": "EERIE BLACK"
-        },
-        {
-            "hex": "343434",
-            "name": "JET"
-        },
-        {
-            "hex": "1A1110",
-            "name": "LICORICE"
-        },
-        {
-            "hex": "111111",
-            "name": "NIGHT"
-        },
-        {
-            "hex": "353839",
-            "name": "ONYX"
-        },
-        {
-            "hex": "414A4C",
-            "name": "OUTER SPACE"
-        },
-        {
-            "hex": "242124",
-            "name": "RAISIN BLACK"
-        },
-        {
-            "hex": "010B13",
-            "name": "RICH BLACK"
-        },
-        {
-            "hex": "100C08",
-            "name": "SMOKY BLACK"
         }
     ]
 }
