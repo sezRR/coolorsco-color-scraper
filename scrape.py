@@ -15,7 +15,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 def scrape_colors_and_save_data_as_json() -> int:
     driver = webdriver.Chrome()
     driver.get("https://coolors.co/colors")
-    delay = 1.5
+    delay = 2.5
 
     try:
         WebDriverWait(driver, delay).until(
@@ -31,7 +31,7 @@ def scrape_colors_and_save_data_as_json() -> int:
 
     while True:
         ActionChains(driver).send_keys(Keys.END).perform()
-        time.sleep(0.15)
+        time.sleep(0.25)
 
         new_height = driver.execute_script("return document.body.scrollHeight")
 
