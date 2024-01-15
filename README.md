@@ -1,6 +1,6 @@
 # Coolors Scraper
 
-This project is a web scraping tool that retrieves color codes from the Coolors website and saves them in JSON format. Additionally, there is a unittest example to verify the accuracy of this tool.
+This project is a web scraping tool that retrieves color codes from the [Coolors website](https://coolors.co/colors) and saves them in JSON format. Additionally, there is an unittest example to verify the accuracy of this tool.
 
 ## Installation
 
