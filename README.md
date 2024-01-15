@@ -50,4 +50,11 @@ This project is a web scraping tool that retrieves color codes from the [Coolors
 To run the provided unittest, execute the following command in the terminal or command prompt:
 
 ```bash
-python test_scrape.py
+python tests/test_scraping.py
+```
+
+or
+
+```bash
+pytest
+```
