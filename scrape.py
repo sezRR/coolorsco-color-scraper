@@ -4,6 +4,7 @@ import time
 from pathlib import Path
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,7 +16,19 @@ import chromedriver_autoinstaller
 
 def scrape_colors_and_save_data_as_json() -> int:
     chromedriver_autoinstaller.install()
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    options = [
+        "--headless",
+        "--disable-gpu",
+        "--window-size=1920,1200",
+        "--ignore-certificate-errors",
+        "--disable-extensions",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+    ]
+    for option in options:
+        chrome_options.add_argument(option)
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get("https://coolors.co/colors")
     delay = 2.5
 
@@ -33,7 +46,7 @@ def scrape_colors_and_save_data_as_json() -> int:
 
     while True:
         ActionChains(driver).send_keys(Keys.END).perform()
-        time.sleep(0.25)
+        time.sleep(0.55)
 
         new_height = driver.execute_script("return document.body.scrollHeight")
 
