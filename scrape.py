@@ -46,7 +46,7 @@ def scrape_colors_and_save_data_as_json() -> int:
 
     while True:
         ActionChains(driver).send_keys(Keys.END).perform()
-        time.sleep(0.55)
+        time.sleep(0.25)
 
         new_height = driver.execute_script("return document.body.scrollHeight")
 
