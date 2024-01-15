@@ -3,17 +3,18 @@ import os.path
 import time
 from pathlib import Path
 
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_colors_and_save_data_as_json() -> int:
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get("https://coolors.co/colors")
     delay = 2.5
 
